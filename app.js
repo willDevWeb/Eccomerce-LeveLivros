@@ -12,7 +12,7 @@ const cors = require("cors");
 const  app = express();
 
 // view engine setup
-app.set('views', path.resolve(__dirname , 'views'));
+app.set('views', path.resolve(__dirname+ '/src' , 'views'));
 app.set('view engine', 'ejs');
 
 app.use(session({
@@ -28,21 +28,21 @@ app.use(express.static(path.resolve(__dirname, 'public')));
 app.use(methodOverride('_method'))
 app.use(cors());
 
-//routes views render
-const views_public = require('./routes/router_views_public');
-const views_user = require('./routes/router_user_profile');
-const views_admin = require('./routes/router_user_admin');
-const user_auth = require('./routes/router_users_auth');
-const purchase = require('./routes/purchase.js')
+//routes views render 
+const views_public = require('./src/routes/router_views_public');
+const views_user = require('./src/routes/router_user_profile');
+const views_admin = require('./src/routes/router_user_admin');
+const user_auth = require('./src/routes/router_users_auth');
+const purchase = require('./src/routes/purchase.js')
 
 //api routes
-const api_users = require('./routes/api_users_router');
-const api_mercado_pago = require('./routes/router_mercado_pago');
-const api_products = require('./routes/api_products_router');
-const api_cart = require('./routes/api_cart_router');
-const api_info = require('./routes/api_info_router');
-const api_purchases = require('./routes/api_purchases_router');
-const api_feedback = require('./routes/api_feedback');
+const api_users = require('./src/routes/api_users_router');
+const api_mercado_pago = require('./src/routes/router_mercado_pago');
+const api_products = require('./src/routes/api_products_router');
+const api_cart = require('./src/routes/api_cart_router');
+const api_info = require('./src/routes/api_info_router');
+const api_purchases = require('./src/routes/api_purchases_router');
+const api_feedback = require('./src/routes/api_feedback');
 
 // ********** public and private routes *********//
 app.use('/admin', views_admin);
