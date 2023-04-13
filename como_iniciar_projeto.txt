@@ -1,0 +1,5 @@
+extrair arquivo rar contendo o banco de dados, exporta-lo ao seu MySql.
+crie uma conta no mercado pago e ultilize sua chave de teste para usar o serviço de pagamento
+informe no arquivo .env.exemple todos os dados necessários
+execute o comando: npm install, 
+e no seu navegador insira o endereço:  http://localhost:3000/s
