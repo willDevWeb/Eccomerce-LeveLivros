@@ -10,3 +10,6 @@
 .nav-genero a:hover{
     background-color: var(--azul-claro);
 }
+#center_page{
+    min-height: 100vh;
+}

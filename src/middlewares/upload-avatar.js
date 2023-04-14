@@ -4,7 +4,7 @@ const multer = require('multer')
 //UPLOAD USERS AVATAR
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      const local = path.join(__dirname, '../public/images/users')
+      const local = path.join(__dirname, '../../public/images/users')
       cb(null, local)
     },
     filename: function (req, file, cb) {

@@ -45,11 +45,13 @@ const products = {
         const {id} = req.params;
         
         let {errors} = validationResult(req);
-        if(errors.length > 0){remove_img_book(req.file.filename);return res.status(401).json(errors); }
+        if(errors.length > 0){remove_img_book(req.file.filename);return res.status(401).json(errors); };
         
-        if(req.file){body.push({front_cover:req.file.filename});}
+        if(req.file){
+            req.body.front_cover =  req.file.filename
+        };
 
-        let body = emptyValuesRemove(req.body)
+        let body = emptyValuesRemove(req.body);
 
         let product = await Books.findByPk(id);
         product.update(body);
